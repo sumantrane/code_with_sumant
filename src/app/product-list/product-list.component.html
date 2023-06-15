@@ -1,0 +1,21 @@
+<app-header></app-header>
+<!-- Products Section -->
+<section class="products">
+  <div class="container">
+    <h2>Featured Products</h2>
+    <div class="product-grid">
+      <div class="product-card" *ngFor="let product of productList">
+        <img src="{{ product.image }}" alt="Product 1" />
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="addToCart(product)"
+        >
+          Add To Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

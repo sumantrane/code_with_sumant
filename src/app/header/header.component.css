@@ -1,0 +1,58 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+}
+.input-group {
+  width: 95%;
+}
+
+nav {
+  background-color: #f8f8f8;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #333;
+  color: #f8f8f8;
+}
+nav ul li.search-box {
+  position: relative;
+}
+
+nav ul li.search-box input {
+  width: 200px; /* Adjust the width as desired */
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li.search-box button {
+  border-radius: 4px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.position-relative {
+  border: none;
+}

@@ -1,0 +1,33 @@
+<nav>
+  <ul>
+    <li><a routerLink="home">Home</a></li>
+    <li><a routerLink="about">About</a></li>
+    <li><a routerLink="services">Services</a></li>
+    <li><a routerLink="contact">Contact</a></li>
+    <li class="search-box">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" />
+        <div class="input-group-append">
+          <button class="btn btn-dark" type="submit">
+            <i
+              class="fas fa-search"
+              #search
+              (change)="onInputChange($event)"
+            ></i>
+          </button>
+        </div>
+        <a class="position-relative" (click)="onCartClick()">
+          <i
+            class="fas fa-cart-arrow-down"
+            style="font-size: 24px; color: red"
+          ></i>
+          <span
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+          >
+            {{ cartCount }}
+          </span>
+        </a>
+      </div>
+    </li>
+  </ul>
+</nav>

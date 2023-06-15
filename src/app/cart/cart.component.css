@@ -1,0 +1,29 @@
+.cart-container {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  border-bottom: 1px solid#ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.item-details h3 {
+  margin-top: 0;
+}
+
+.empty-cart {
+  margin-top: 10px;
+  text-align: center;
+  color: #999;
+}
