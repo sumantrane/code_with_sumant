@@ -1,9 +1,13 @@
 export interface Product {
-  id: number;
+  _id: number;
+  p_id: number;
   name: string;
   description: string;
   price: string;
   image: string;
+  quantity: number;
+  hasDiscount?: boolean;
+  discount?: number;
 }
 
 export interface Products {

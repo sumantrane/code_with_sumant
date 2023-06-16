@@ -18,6 +18,10 @@ li {
   margin-bottom: 10px;
 }
 
+.clear-cart {
+  float: right;
+}
+
 .item-details h3 {
   margin-top: 0;
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../shared/products.service';
 import { Product } from '../shared/product.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -10,13 +11,25 @@ import { Product } from '../shared/product.interface';
 export class CartComponent implements OnInit {
   cartItems: Product[] = [];
 
-  constructor(private productService: ProductsService) {}
+  constructor(
+    private productService: ProductsService,
+    private _router: Router
+  ) {}
 
   ngOnInit(): void {
     this.cartItems = this.productService.getCartItems();
+    console.log(this.cartItems);
   }
 
-  deleteProduct(id: number) {
+  clearCart() {
+    this.productService.clearCart();
+  }
+
+  deleteProduct(id: any) {
     this.productService.removeSingleProduct(id);
+  }
+
+  onContinueShopping() {
+    this._router.navigate(['/products']);
   }
 }

@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="screen">
+    <div class="screen__content">
+      <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+      <form
+        [formGroup]="userForm"
+        class="login"
+        (ngSubmit)="onSubmit(userForm)"
+      >
+        <div class="login__field">
+          <i class="login__icon fas fa-user"></i>
+          <input
+            type="email"
+            class="login__input"
+            [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+            formControlName="email"
+            required="true"
+            [autofocus]="true"
+            placeholder="Please enter your Email ID"
+          />
+          <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+            <div *ngIf="f['email'].errors['required']">
+              Username is required
+            </div>
+          </div>
+        </div>
+        <div class="login__field">
+          <i class="login__icon fas fa-lock"></i>
+          <input
+            type="password"
+            class="login__input"
+            formControlName="password"
+            [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+            placeholder="Please enter your password"
+          />
+          <div
+            *ngIf="submitted && f['password'].errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f['password'].errors['required']">
+              Password is required
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <button [disabled]="loading" class="btn btn-primary p-2">
+            <span
+              *ngIf="loading"
+              class="spinner-border spinner-border-sm me-1"
+            ></span>
+            Login
+          </button>
+          <a routerLink="../register" class="btn pl-3 btn-link">Register</a>
+        </div>
+      </form>
+    </div>
+    <div class="screen__background">
+      <span class="screen__background__shape screen__background__shape4"></span>
+      <span class="screen__background__shape screen__background__shape3"></span>
+      <span class="screen__background__shape screen__background__shape2"></span>
+      <span class="screen__background__shape screen__background__shape1"></span>
+    </div>
+  </div>
+</div>

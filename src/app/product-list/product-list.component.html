@@ -2,10 +2,29 @@
 <!-- Products Section -->
 <section class="products">
   <div class="container">
-    <h2>Featured Products</h2>
+    <h2>Discounted Products</h2>
+    <div class="slider-container">
+      <div class="slider">
+        <div class="slide" *ngFor="let product of discountedProducts">
+          <img src="{{ product.image }}" alt="Product" />
+          <h3>
+            <strong>{{ product.name }}</strong>
+          </h3>
+          <p>
+            <strong>Discount:</strong> {{ product?.discount | percent }}
+            <i class="fas fa-tags" style="font-size: 24px; color: red"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+    <h2 class="mt-10">All Products</h2>
     <div class="product-grid">
-      <div class="product-card" *ngFor="let product of productList">
-        <img src="{{ product.image }}" alt="Product 1" />
+      <div
+        class="product-card"
+        *ngFor="let product of productList"
+        [routerLink]="[product.p_id]"
+      >
+        <img src="{{ product.image }}" alt="Product" />
         <h3>{{ product.name }}</h3>
         <p>{{ product.description }}</p>
         <button

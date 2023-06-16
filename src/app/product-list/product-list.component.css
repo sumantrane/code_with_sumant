@@ -41,3 +41,34 @@ img {
   font-size: 18px;
   margin: 0;
 }
+
+/*featured products slider*/
+
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  animation: slide-animation 20s linear infinite;
+}
+
+.slide {
+  flex: 0 0 300px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #f4f4f4;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+@keyframes slide-animation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translate(-100%);
+  }
+}
